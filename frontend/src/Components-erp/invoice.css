@@ -1,0 +1,175 @@
+        * {
+            padding: 0%;
+            margin: 0%;
+        }
+
+        .container {
+            margin: 12px;
+            margin-top: 23px;
+            height: 42cm;
+            border: 2px solid black;
+        }
+
+        .firsth3 {
+            font-size: 25px;
+            padding: 5px;
+            position: absolute;
+            top: -5px;
+            left: 6px;
+        }
+
+        .h1 {
+            top: 48px;
+            position: absolute;
+            left: 40.1%;
+        }
+
+        .h2 {
+            top: 30px;
+            position: absolute;
+            left: 42%;
+        }
+
+        .h3 {
+            top: 82px;
+            position: absolute;
+            left: 38%;
+        }
+
+        .hr1 {
+            background-color: black;
+            height: 1px;
+            width: 39.5cm;
+            position: absolute;
+            top: 0cm;
+        }
+
+        .section2 {
+            font-size: 30px;
+            position: absolute;
+            top: 107px;
+            display: flex;
+        }
+
+
+        .p1 {
+            width: 27.5cm;
+        }
+
+
+        .hr2 {
+            background-color: black;
+            height: 1px;
+            width: 39.5cm;
+            position: absolute;
+            top: 4.8cm;
+        }
+
+
+        .section3 {
+            font-size: 30px;
+            position: absolute;
+            top: 300px;
+            display: flex;
+        }
+
+        .audditdate {
+            display: inline;
+            margin-left: -1000px;
+        }
+
+
+        .hr4 {
+            background-color: black;
+            height: .5px;
+            width: 39.5cm;
+            position: absolute;
+            top: 5.7cm;
+        }
+
+        .section3p1 {
+            width: 25cm;
+        }
+
+        .table {
+
+            position: relative;
+            top: 13cm;
+            font-size: 30px;
+            padding: 10px;
+            width: 39.5cm;
+        }
+
+        .th {
+            border: 1px solid black;
+        }
+
+        .trth {
+            border: 1px solid black;
+        }
+
+        .th {
+            border: 1px solid black;
+        }
+
+        .th {
+            padding: 5px;
+            padding-left: 60px;
+        }
+
+        .tr {
+            border: 1px solid black;
+        }
+
+
+        .td {
+            border: 1px solid black;
+            padding: 12px 46px 10px 111px;
+        }
+
+        .section4 {
+            font-weight: 500;
+            font-size: 28px;
+            position: absolute;
+            top: 25.6cm;
+            left: 31.4cm;
+        }
+
+        .section4h2 {
+            position: absolute;
+            top: 30.9cm;
+            left: 9cm;
+        }
+
+        .section5 {
+            height: fit-content;
+            width: inherit;
+            border: 1px solid black;
+            font-size: 30px;
+            width: 70%;
+            position: absolute;
+            top: 31.9cm;
+            left: 1cm;
+        }
+
+        .section6 {
+            height: 5cm;
+            width: 10cm;
+            border: 1px solid black;
+            font-weight: 500;
+            font-size: 20px;
+            position: absolute;
+            top: 31.9cm;
+            left: 29.6cm;
+        }
+
+        .section7 {
+            height: 5cm;
+            width: 10cm;
+            border: 1px solid black;
+            font-weight: 500;
+            font-size: 20px;
+            position: absolute;
+            top: 36.9cm;
+            left: 29.6cm;
+        }

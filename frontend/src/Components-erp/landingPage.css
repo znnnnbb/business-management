@@ -1,0 +1,157 @@
+.body{
+    background-image: url('./real\ background.png');
+}
+.background{
+    background-image: url('./abst.jpg');
+    
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-image: url(/real\ background.png); */
+    background-image: url('./real\ background.png');
+
+       background-repeat: no-repeat;
+       background-attachment: fixed;
+       background-size: cover;
+   }
+
+   .box {
+       margin-right: 1px;
+       margin-left: 1px;
+       margin-top: 1px;
+       padding: 2px;
+       height: 18.799cm;
+   }
+
+   .logo {
+       display: inline-block;
+   }
+
+   .auddit {
+       position: absolute;
+       left: 3.5cm;
+
+   }
+
+   .img1 {
+       border-radius: 43% 57% 38% 62% / 64% 49% 51% 36%;
+       position: absolute;
+       top: .3cm;
+       width: 3cm;
+       left: .5cm;
+   }
+
+   .nav {
+       display: flex;
+       font-size: 40px;
+       position: absolute;
+       top: .8cm;
+       margin-top: .1cm;
+       font-size: 20px;
+       background-color: transparent;
+       color: black;
+       margin-left: 11.3cm;
+       border-radius: 20px;
+   }
+
+   .nav-item {
+       font-size: 30px;
+       height: 1cm;
+       list-style: none;
+       padding-top: 11px;
+       padding-left: cm;
+       padding-right: 1cm;
+   }
+
+   .nav-link {
+       border: 2px solid black;
+       height: 1cm;
+       color: black;
+       padding: 4px;
+       text-decoration: none;
+   }
+
+   .nav-link:hover {
+       background-color: gray;
+       color: white;
+
+   }
+
+   .firsth2 {
+       position: absolute;
+       top: 7.4cm;
+       font-size: 40px;
+       left: 17.5cm;
+   }
+
+   .your {
+       font-size: 40px;
+       position: absolute;
+       top: 4.8cm;
+       left: 18.4cm;
+   }
+
+   .firsth1 {
+       color: blue;
+       font-size: 70px;
+       position: absolute;
+       top: 5.2cm;
+       left: 1cm;
+       left: 16cm;
+   }
+
+   .secondh1 {
+       color: blueviolet;
+       font-size: 70px;
+       position: absolute;
+       top: 9.1cm;
+       left: 17.4cm;
+   }
+
+   .firsth3 {
+       position: absolute;
+       top: 11.3cm;
+       left: 1cm;
+       font-size: 40px;
+       left: 14.3cm;
+   }
+
+   .btn {
+       padding: 4px;
+       font-size: 20px;
+       border: 3px solid black;
+       color: black;
+       font-weight: 700;
+       border-radius: 10px;
+       box-shadow: 1px 0 1px 1px gray;
+       background-color: transparent;
+       position: absolute;
+       top: 14cm;
+       cursor: pointer;
+       left: 16.9cm;
+   }
+
+   .btn1 {
+       border: 3px solid black;
+       color: black;
+       font-weight: 700;
+       border-radius: 10px;
+       background-color: transparent;
+       position: absolute;
+       top: 14cm;
+       cursor: pointer;
+       left: 20.7cm;
+   }
+
+   .btn:hover {
+       background-color: blue;
+   }
+
+   .img {
+       position: absolute;
+       top: 2.9cm;
+       left: 22cm;
+       height: 15cm;
+       width: 20cm;
+
+   }

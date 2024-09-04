@@ -1,0 +1,863 @@
+import React from 'react'
+
+function Tiles() {
+  return (
+    <body className='  h-fit w-full px-8 py-16 bg-neutral-900 shadow-md shadow-black  rounded-xl m-12   ' >
+      <div className=' float-left'  >
+        
+      <div className='grid gap-8 items-start justify-center  '>
+        <div className='relative group '>
+          <div className='absolute inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur-sm opacity-75 group-hover:opacity-100 transition duration-200 '></div>
+        <button className='relative px-7 py-4 bg-black rounded-lg leading-none flex items-center divide-x divide-gray-600 hover:bg-gradient-to-r from-purple-800 to-red-800  transition duration-500  '>
+          <span className='text-gray-100 pr-6 '>Labes Release 2022.09</span>
+          <span className='text-indigo-600 pl-6 group-hover:text-gray-100 transition duration-200  '>{'see whats new ->'}</span>
+          
+        </button>
+      </div>
+      </div>
+      </div>
+      <div className='grid gap-12 items-start justify-center ml-12 '>
+        <div className='relative group '>
+          <div className='absolute inset-1 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur-md opacity-75   group-hover:opacity-100 transition duration-200 '></div>
+        <button className='relative px-7 py-4 bg-black rounded-lg leading-none flex items-center divide-x divide-gray-600  '>
+          <span className='text-gray-100 pr-6 '>Labes Release 2022.09</span>
+          <span className='text-indigo-600  pl-6 group-hover:text-gray-100 transition duration-200  '>{'see whats new ->'}</span>
+          
+        </button>
+      </div>
+      </div>
+  
+    </body>
+  )
+}
+
+export default Tiles
+
+
+====================================================================main.js p.1===============================================================================
+import React from 'react'
+import Navbar from './Navbar'
+import Content from './Content'
+import {useState} from 'react'
+import Settings from './Settings'
+import Tiles from './Tiles'
+import {
+  BrowserRouter,
+  Route,
+  Routes
+}  from 'react-router-dom'
+ 
+function Main() {
+  const [incontent,setincontent] = useState('tiles')
+
+  const changeContent=(event)=>{
+    const name = event.target.value
+    setincontent(name)
+  }
+  
+  return (
+    <div className='min-h-screen w-screen bg-gray-300 flex'>
+      <Navbar  />
+      
+      <div>
+      <BrowserRouter>
+        
+    <Routes>
+      <Route path="/" element={<Tiles/>} />
+      <Route path="settings" element={<Settings />} />
+    </Routes>
+  </BrowserRouter>
+      </div>
+      </div>
+  )
+}
+
+export default Main
+================================================================================================================================================
+import { list } from 'postcss'
+import React from 'react'
+import { Link,Navigate, useNavigate } from 'react-router-dom'
+
+function Tiles() {
+  const heads =["sr","date","amount","sender"]
+  return (
+    <>
+    
+    <div className={` ml-12 mt-10 bg-inherit   `}>
+    <div className='flex  rounded-lg  space-x-14  bg-inherit p-5  '  >
+    <div className='  h-28 w-56 rounded-lg bg-gradient-to-r from-ameth1 to-ameth2 shadow-lg cursor-pointer hover:scale-125 focus: '>
+      <span  className='font-bold text-sm ml-2 text-white  ' >Total Invoice:</span>
+      <div  className='text-white font-bold text-4xl ml-10 mt-4 ' >{`₹ ${70000}`}</div>
+    </div>
+    <div className='bg-white  h-28 w-56 rounded-lg   bg-gradient-to-r from-blue1 to to-blue2  shadow-lg cursor-pointer hover:scale-125'>
+      <span className='ml-2 font-bold text-white '  >Payment Received:</span>
+      <div  className='text-white font-bold text-4xl ml-10 mt-4 ' >{`₹ ${70000}`}</div>
+    </div>
+    <div className='bg-white  h-28 w-56 rounded-lg   bg-gradient-to-r from-intu1 to-intu2 shadow-lg cursor-pointer  hover:scale-125 '></div>
+    <Link to={'/settings'} >
+    <div className='bg-white  h-28 w-56 rounded-lg   bg-gradient-to-r from-lagoo2 to-lagoo3 shadow-lg cursor-pointer hover:scale-125     '  ></div>
+    </Link>
+    </div>
+    {//lists
+    }
+    
+    <div className='bg-gray-400 h-72 rounded-lg w-96 m-12 '>
+
+     <table className='table-auto' >
+       <thead className='space-x-6 border-b-2 border-b-black ' >
+       {
+         heads.map((listvalue,index)=>{
+           return(
+             <>
+             <span className=' ml-2  ' > {listvalue} </span>
+              
+             </>
+           )
+         })
+       }
+        
+        
+       </thead>
+       <tbody className='space-x-7' >
+         <div className='border-b-2 border-black' >
+
+        {
+          heads.map((listview,index)=>{
+            return(
+              <span className='  ml-6 ' >{listview}</span>
+              )
+            })
+          }
+          </div>
+       </tbody>
+     </table>
+       
+
+    </div>
+
+      
+    </div>
+    </>
+    
+  )
+}
+
+export default Tiles
+
+==================================================================================================================================
+import React,{useState} from "react";
+
+
+
+function Navbar() {
+    
+  const [navwidth, setnavwidth] = useState('52')
+  const [iconRotate, seticonRotate] = useState('0')
+  const [scaller, setscaller] = useState('100')
+  const [iconScaller, seticonScaller] = useState(125)
+
+   const changeNav=()=>{
+     if(navwidth==='52'){
+       setnavwidth('16')
+       seticonRotate('180')
+       setscaller('0')
+       seticonScaller('125')
+     }
+     else{
+       setnavwidth('52')
+       seticonRotate('0')
+       setscaller('100')
+     }
+     
+    
+  
+    
+  }
+  return (
+    <>
+      <div className={`min-h-full w-${navwidth} bg-slate-900  fixed transition duration-500 `}>
+        <h1 className="text-white text-center font-bold ">AUDDIT</h1>
+       
+          <button     
+            className={`   rounded-full bg-white  -right-3 border-2 border-black  rotate-${iconRotate} `}
+            onClick={() => {
+              changeNav();
+            }}
+          >
+            {
+              <svg 
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            }
+          </button>
+          <div  className="bg-transparent mt-6" >
+          <a href="/settings" >
+
+          <div  className="bg-transparent flex w-inherit hover:bg-ameth1 cursor-pointer rounded-md ml-1 " >
+            <div className=" w-16 place-items-center  ">
+
+            <svg   
+            
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-10 w-14"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="white"
+            stroke-width="1"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                />
+            </svg>
+                </div>
+              <div className={`text-white text-center font-bold  mt-2 ml-2 scale-${scaller} `}>Home</div>
+            
+         
+        </div>
+                </a>
+                </div>
+      </div>
+    </>
+  );
+}
+
+export default Navbar;
+
+
+======================================================================================================================================
+import { toBeEnabled } from "@testing-library/jest-dom/dist/matchers";
+import { comment } from "postcss";
+import React,{useState} from "react";
+import { Link, NavLink } from "react-router-dom";
+
+
+
+function Navbar(props) {
+
+     const [navwidth, setnavwidth] = useState('w-52')
+  const [iconRotate, seticonRotate] = useState('rotate-0')
+  const [scaller, setscaller] = useState('scale-100')
+  const [iconScaller, seticonScaller] = useState(125)
+  const [hoverScale, sethoverScale] = useState('')
+   const [enableHover, setenableHover] = useState('')
+   const changeNav=()=>{
+     if(navwidth==='w-52'){
+       
+       setnavwidth('w-16')
+       console.log(navwidth)
+       seticonRotate('rotate-180')
+       setscaller('scale-0')
+      
+     }
+     else{
+      
+       setnavwidth('w-52')
+       console.log(navwidth)
+       seticonRotate('rotate-0')
+       console.log(iconRotate)
+       setscaller('scale-100')
+       console.log(scaller)
+     }
+    }
+     const hoverButton=()=>{
+       if(enableHover===''){
+         setenableHover('hover:w-52')
+         sethoverScale('group-hover:scale-100')
+       }else if(enableHover==='hover:w-52'){
+         setenableHover('')
+         sethoverScale('')
+       }
+     }
+
+
+
+
+
+  return (
+    <>
+      <div
+        className={`min-h-full ${navwidth} bg-slate-900  group  fixed   ${enableHover} transition duration-300 delay-200 `}
+      >
+        <div className="grid justify-items-center mt-4  ">
+          {/* logo and name */}
+          <div className="bg-white rounded-full    h-12 w-12  justify-self-center ">
+            <img src=""></img>
+          </div>
+        </div>
+
+        <h1 className="text-white text-center font-sans  border-b-2 border-white pb-2 ">{`Name Here`}</h1>
+
+        <button
+          className={`  absolute  bg-slate-800 grid justify-items-center    w-full  bottom-2  ${iconRotate} `}
+          onClick={() => {
+            changeNav();
+            props.changePadding();
+          }}
+        >
+          {
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          }
+        </button>
+        <div>
+          <button
+            className="bg-inherit w-full  grid justify-items-center absolute  bottom-8"
+            onClick={() => {
+              hoverButton();
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="white"
+              stroke-width="1"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div className="bg-transparent mt-6">
+          {/* {home button} */}
+          <NavLink to={'/invoices'}>
+            <div className="bg-transparent flex w-inherit hover:bg-slate-800 cursor-pointer rounded-md ml-1 ">
+              <div className=" w-16 place-items-center  ">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-10 w-14"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="white"
+                  strokeWidth="0.5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                  />
+                </svg>
+              </div>
+              <div
+                className={`text-white text-center font-thin  mt-2 ml-2  ${scaller}  ${hoverScale}  `}
+              >
+                Home
+              </div>
+            </div>
+          </NavLink>
+          {/* 2 btn accounts */}
+          <a href="/settings">
+            <div className="bg-transparent flex w-inherit hover:bg-slate-800 cursor-pointer rounded-md ml-1  mt-4 ">
+              <div className=" w-16 place-items-center  ">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-10 w-14"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="white"
+                  strokeWidth="0.5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <div
+                className={`text-white text-center font-thin  mt-2 ml-2  ${scaller}   ${hoverScale}    `}
+              >
+                Accounts
+              </div>
+            </div>
+          </a>
+          {/* 3 btn     statements  */}
+          <a href="/invoices">
+            <div className="bg-transparent flex w-inherit hover:bg-slate-800 cursor-pointer rounded-md ml-1  mt-4 ">
+              <div className=" w-16 place-items-center  ">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-10 w-12"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="white"
+                  strokeWidth="0.5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+              </div>
+              <div
+                className={`text-white text-center font-thin  mt-2 ml-2  ${scaller} ${hoverScale}   `}
+              >
+                Statements
+              </div>
+            </div>
+          </a>
+          <a href="/settings">
+            <div className="bg-transparent flex w-inherit hover:bg-slate-800 cursor-pointer rounded-md ml-1  mt-4 ">
+              <div className=" w-16 place-items-center  ">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-10 w-12"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="white"
+                  strokeWidth="0.5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                  />
+                </svg>
+              </div>
+              <div
+                className={`text-white text-center font-thin  mt-2 ml-2  ${scaller} ${hoverScale}  `}
+              >
+                Progress
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default Navbar;
+
+======================================================================================================================================================================
+import React, { createElement, useState } from "react";
+import Navbar from "./Navbar";
+import jsPDF from "jspdf";
+import $ from 'jquery'
+function Invoice(props) {
+
+ 
+  const invoice = [
+    {
+      srNo: Number,
+      Description: String,
+      Rate: Number,
+      qty: Number,
+      Amount: Number,
+    },
+  ];
+  
+
+
+  const [IsOpen, setIsOpen] = useState(true)
+  const [nameSearch, setnameSearch] = useState('')
+ const [searchValue, setsearchValue] = useState('')
+ const [dropSearch, setdropSearch] = useState('scale-0')
+ let i= 0;
+ const  SearchName=(e)=>{
+    setdropSearch('scale-100')
+    const value = e.target.value
+    setsearchValue(value)
+    console.log(e)
+
+
+ }
+ const  ExitSearchName=()=>{
+    setdropSearch('scale-0')
+   console.log(dropSearch)
+   
+
+ }
+
+ const addButton=()=>{
+   console.log('addb')
+   i++
+   const pElement = document.getElementById('tableb')
+   const trElement = document.createElement('tr')
+   const tdElement = document.createElement('td')
+   const inputElement = document.createElement('input')
+   const srNoElement = document.createElement('p')
+   const amountElement = document.createElement('div')
+   pElement.append(trElement)
+   trElement.setAttribute('id',`tr${i}`)
+   const  createdTr = document.getElementById(`tr${i}`)
+     createdTr.append(srNoElement)
+     srNoElement.setAttribute('id',`srNo${i}`)
+    
+    
+
+     document.getElementById(`srNo${i}`).innerText = `${i}`
+     
+     
+   for (let j = 2; j <= 5 ; j++) {
+     console.log('ddd')
+     if(j===5){
+       amountElement.setAttribute('id',`amount${i}`)
+       amountElement.setAttribute("style", `border:2px solid black`);
+
+       amountElement.addEventListener('click',()=>console.log('click'))
+       
+       trElement.append(amountElement)
+       
+      const amounti =   document.getElementById(`amount${i}`)
+      amounti.innerText = 0
+        
+       
+     }else{
+
+       tdElement.setAttribute('id',`${i}td${j}`)   
+       
+       createdTr.append(tdElement.cloneNode(true))
+       const createdTd = document.getElementById(`${i}td${j}`)
+      
+       inputElement.setAttribute("id", `${i}input${j}`);
+      // inputElement.setAttribute("className", `input`);
+       inputElement.setAttribute("style", `border:2px solid black`);
+       inputElement.setAttribute(`no`,`${i}${j}`)
+     
+      inputElement.addEventListener('onChange',()=>console.log('click'))
+      
+       if(j===2){
+         inputElement.setAttribute(`type`,`text`)
+         
+        }else{
+          inputElement.setAttribute('type',`Number`)
+     }
+     
+     createdTd.append(inputElement.cloneNode(true));
+     if(j===2){
+           
+     }else{
+
+       const createdIn = document.getElementById(`${i}input${j}`)
+       console.log(createdIn)
+       createdIn.setAttribute('class',i)
+       createdIn.addEventListener('change',(e)=>amountvalue(e))
+      }
+    }
+     
+     
+    }
+    
+   console.log(i)
+    
+  
+  }
+  const amountvalue=(e)=>{
+  
+  console.log(`change`)
+  console.log(e.target.className)
+  const count = e.target.className
+  const getRateValue = document.getElementById(`${count}input${3}`).value
+   const getQtyValue = document.getElementById(`${count}input${4}`).value
+   const getAmount = document.getElementById(`amount${count}`)
+   getAmount.innerText = getRateValue * getQtyValue
+    
+  }
+
+  
+   const SubmitInvoice=()=>{
+     console.log('kkk')
+     for (let k=1;k<=i;k++){
+       let count = 2;
+       let count2 = 3;
+       let count3 = 4
+       let count4 = 5
+      
+       invoice.push(
+         {
+          srNo:k,
+           Description:document.getElementById(`${k}input${count}`).value,
+           Rate:document.getElementById(`${k}input${count2}`).value,
+           qty:document.getElementById(`${k}input${count3}`).value,
+           Amount:document.getElementById(`amount${k}`).innerText,
+
+         }
+       )
+      } 
+      console.log(invoice)
+   }
+ 
+  const createInvoice=()=>{
+    const doc = new jsPDF();
+     const pdf = document.getElementById('one')
+   
+    doc.html(pdf).save('aaa.pdf')
+
+  }
+  
+  
+
+  return (
+    <>
+      <div className=" space-y-3 ">
+        <div className="flex  space-x-4 ">
+          <div
+            className="mt-7   h-7 space-x-4 "
+            onMouseLeave={() => {
+              ExitSearchName();
+            }}
+          >
+            <label>{`Billed To (Useranme) :`}</label>
+            <input
+              type={"text"}
+             
+              className={`border-blue-800 border-2 `}
+              value={searchValue}
+              onChange={(e) => SearchName(e)}
+            ></input>
+            <div className={`bg-white shadow-lg  rounded-lg ${dropSearch}  `}>
+              <li className="cursor-pointer  scale-100">asda</li>
+              <li className="cursor-pointer  scale-100">asda</li>
+              <li className="cursor-pointer  scale-100">asda</li>
+            </div>
+          </div>
+          <div
+            className="mt-7 h-7 space-x-4 "
+            onMouseLeave={() => {
+              ExitSearchName();
+            }}
+          >
+            <label>{` Shipped To (Useranme) :`}</label>
+            <input
+              type={"text"}
+              placeholder={`enter Username`}
+              className={`border-blue-800 border-2 `}
+              value={searchValue}
+              onChange={(e) => SearchName(e)}
+            ></input>
+            <div className={`bg-white shadow-lg ${dropSearch}  `}>
+              <li className="cursor-pointer  scale-100">asda</li>
+              <li className="cursor-pointer  scale-100">asda</li>
+              <li className="cursor-pointer  scale-100">asda</li>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <table  >
+            <thead  className="bg-sky-600 text-white "  >
+              <th>
+                <span className="p-3">SNO.</span>
+              </th>
+              <th>
+                <span className="p-10">Description</span>
+              </th>
+              <th>
+                <span className="p-3">Rate</span>
+              </th>
+              <th>
+                <span className="p-3">QTY.</span>
+              </th>
+              <th>
+                <span className="p-3">Amount</span>
+              </th>
+            </thead>
+            <tbody id="tableb" className="tablebd"></tbody>
+          </table>
+        </div>
+        <div id="fff"></div>
+        <button
+          onClick={() =>  addButton() }
+        >
+          asd
+        </button>
+        <button
+          type="button"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          onClick={()=>SubmitInvoice()}
+        >
+          Default
+        </button>
+        
+      </div>
+    </>
+  );
+}
+
+export default Invoice;
+
+
+
+
+
+========================================================================================================
+ <div className=" w-screen h-screen overflow-auto  bg-white  grid justify-items-center text-black">
+        <div
+          id="printDiv"
+          className="border-2 bg-white    space-y-4 h-fit rounded-lg shadow-lg text-black mt-24"
+        >
+          GSTIN:{`05CESPS2109N1ZY`}
+          <div className="border-2 border-black">
+            {
+              //headers
+            }
+            <div className="text-center font-bold  text-xs  ">TAX INVOICE</div>
+            <div className="text-center font-bold text-sm ">
+              {`DIYA INDUSTRIES`}
+            </div>
+            <div className="text-center font-bold ">
+              {`Khasra No. 1022M,Camp Road,Selaqui`}
+            </div>
+            <div className="text-center font-bold">
+              {`UTTRAKHAND INDIA-248197`}
+            </div>
+            <div className="text-center font-bold text-sm border-b-2 border-black ">
+              {`Tel: 09258350222,9917468057 Email: diya.12018@yahoo.com`}
+            </div>
+            {
+              //invoice details   2 sections flex container
+            }
+            <div className="flex">
+              <div className="font-bold text-sm border-r-2 border-b-2 border-black  ">
+                <div>
+                  {`Invoice Number`} {`:  2021/2022/465 `}
+                </div>
+                <div>
+                  {`Date Of Invoice`}
+                  {` : 13.03.2022 `}
+                </div>
+                <div>{`Place Of Supply  :  Uttrakhand `}</div>
+                <div className="">{`Reverse Charge  : No `}</div>
+                <div>
+                  <div className="font-bold border-b-2 border-t-2 pr-10 border-black ">
+                    <div className="text-sm">Billed To:</div>
+                    <div className="text-xs">{`DIXON TECNOLOGY(INDIA)LTD`}</div>
+                    <div className="text-sm">
+                      {`Adress :`} {`Plot No.c3/1 Industrial Area,Selaqui`}
+                    </div>
+                    <div className="text-sm">
+                      {`State :`} {`Dehradun,Uttrakhand-248197`}
+                    </div>
+                    <div className="text-sm">
+                      {`State Code:`} {`05`}
+                    </div>
+                    <div className="text-sm">
+                      {`GSTIN No. : `} {`05AAACD3641DZA`}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="font-bold text-sm border-b-2 border-black ">
+                <div className="pr-5">
+                  {`Transportation Mode`} {`: Appl For Supply of Goods Only `}
+                </div>
+                <div>
+                  {`Date Of Invoice`}
+                  {` : 13.03.2022 `}
+                </div>
+                <div>{`Place Of Supply  :  Uttrakhand `}</div>
+                <div>{`Reverse Charge  : No `}</div>
+                <div className="font-bold border-b-2 border-t-2 pr-10 border-black ">
+                  <div className="text-sm">Billed To:</div>
+                  <div className="text-xs">{`DIXON TECNOLOGY(INDIA)LTD`}</div>
+                  <div className="text-sm">
+                    {`Adress :`} {`Plot No.c3/1 Industrial Area,Selaqui`}
+                  </div>
+                  <div className="text-sm">
+                    {`State :`} {`Dehradun,Uttrakhand-248197`}
+                  </div>
+                  <div className="text-sm">
+                    {`State Code:`} {`05`}
+                  </div>
+                  <div className="text-sm">
+                    {`GSTIN No. : `} {`05AAACD3641DZA`}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button onClick={() => createInvoice()}>asdas</button>
+        <button onClick={() => createIn()}>aasvs</button>
+      </div>
+
+====================================================================================================
+const gBill = async () => {
+    aaa = await getBill();
+    console.log("gbill", aaa);
+    transactions.push(aaa);
+    trans = transactions[0];
+    console.log(trans);
+    const { invoice } = trans[0];
+    console.log("invoice", invoice);
+    for (let j = 0; j <= invoice.length; j++) {
+      let k = 0;
+      const parentElement = $(`#transTable`);
+      const trElement = document.createElement("tr");
+      const tdElement = document.createElement("td");
+      const divElement = document.createElement(`div`);
+      trElement.setAttribute("id", `tr${j}`);
+
+      console.log("enter");
+      parentElement.append(trElement);
+
+      for (k = 0; k <= 4; k++) {
+        const createdTr = $(`#tr${j}`);
+        tdElement.setAttribute("id", `${j}td${k}`);
+        createdTr.append(tdElement.cloneNode(true));
+
+        const createdTd = $(`#${j}td${k}`);
+        divElement.setAttribute(`id`, `${j}div${k}`);
+        createdTd.append(divElement.cloneNode(true));
+        const createdDiv = document.getElementById(`${j}div${k}`);
+
+        if (k === 0) {
+          createdDiv.innerText = j;
+        } else if (k === 1) {
+          createdDiv.innerText = invoice[j].Description;
+        } else if (k === 2) {
+          amount1 = amount1 + invoice[j].amount;
+          createdDiv.innerText = amount1;
+        }
+      }
+    }
+  };
+
+  const getBill = async () => {
+    console.log("ingetBill");
+    const res = await fetch("/get", {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    });
+    const data = await res.json();
+
+    return data;
+  };
+

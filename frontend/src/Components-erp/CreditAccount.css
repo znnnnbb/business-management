@@ -1,0 +1,80 @@
+table {
+    top: 6cm;
+    align-items: center;
+    justify-content: center;
+
+    /* width: 39; */
+    height: inherit;
+    /* padding-left: 7px; */
+    /* padding-top: 7px; */
+   
+}
+
+.tds {
+    background-color: gray;
+    padding-left: 3px;
+    padding-right: 3px;
+
+}
+
+.ths {
+    background-color: gray;
+    border-bottom: 2px solid black;
+}
+
+.tdx {
+    background-color: floralwhite;
+    border-bottom: 1px solid black;
+}
+
+.th1 {
+    background-color: gray;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    border-bottom: 2px solid black;
+    text-align: center;
+
+}
+
+.td1 {
+
+    background-color: floralwhite;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+.tdp {
+
+    background-color: floralwhite;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    border-bottom: 1px solid black;
+    text-align: center;
+    color: blue;
+}
+.tdn {
+
+    background-color: floralwhite;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    border-bottom: 1px solid black;
+    text-align: center;
+    color: red
+}
+.tdm {
+
+    background-color: floralwhite;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    border-bottom: 1px solid black;
+    text-align: center;
+    font:bold;
+}
+
+.td2 {
+
+    background-color: gray;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}

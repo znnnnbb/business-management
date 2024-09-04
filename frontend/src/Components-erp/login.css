@@ -1,0 +1,168 @@
+.top {
+  background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+ /* font-family: "Open Sans", sans-serif; */
+  color: #333333;
+}
+
+.box-left {
+  margin: 0 auto;
+  width: 80%;
+  background: #FFFFFF;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex: 1 1 100%;
+  align-items: stretch;
+  justify-content: space-between;
+  box-shadow: 0 0 20px 6px #090b6f85;
+}
+
+.box-left {
+  height: auto;
+}
+
+.left {
+  color: #FFFFFF;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-image: url("./background.jpg");
+}
+
+.box-left .left .div-h1-p {
+  padding: 30px;
+  width: 100%;
+  height: 100%;
+  background: #5961f9ad;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.div-h1-p {
+  padding: 30px;
+  width: 100%;
+  height: 100%;
+  background: #5961f9ad;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.span-p {
+  margin-bottom: -4cm;
+  margin-top: 5cm;
+  font-size: 30px;
+}
+
+.div-h1 {
+  font-size: 10vmax;
+  line-height: 1;
+  font-weight: 900;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.div-p {
+  margin-top: 30px;
+  font-weight: 900;
+}
+
+
+.facebook {
+  background: #3b5998;
+  color: #FFFFFF;
+  margin-top: 5cm;
+  padding: 14px 50px;
+  border-radius: 100px;
+  display: inline-block;
+  box-shadow: 0 3px 6px 1px #042d4657;
+}
+
+.twitter {
+  background-color: green;
+  background: #3b5998;
+  color: #FFFFFF;
+  margin-top: 10px;
+  padding: 14px 50px;
+  border-radius: 100px;
+  display: inline-block;
+  box-shadow: 0 3px 6px 1px #042d4657;
+}
+
+
+
+.right {
+  padding: 40px;
+  overflow: hidden;
+}
+
+
+.righth5 {
+  font-size: 6vmax;
+  line-height: 0;
+}
+
+
+
+
+.inputs {
+  overflow: hidden;
+}
+
+.right input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 25px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #B0B3B9;
+}
+
+.remember-me-forgetpass {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remember-me-forgetpassinput {
+  margin: 0;
+  margin-right: 7px;
+  width: auto;
+}
+
+.rightbutton {
+  cursor: pointer;
+  /* float: right; */
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 35px;
+  border-radius: 50px;
+  display: inline-block;
+  border: 0;
+  outline: 0;
+  box-shadow: 0px 4px 20px 0px #49c628a6;
+  background-image: linear-gradient(135deg, #70F570 10%, #49C628 100%);
+}
+
+.label {
+  display: block;
+  position: relative;
+  margin-left: 30px;
+}
+
+.remember-me-forgetpass p {
+  cursor: pointer;
+}
+
+.text-checkbox {
+  font-family: "Open Sans", sans-serif;
+  display: inline-block;
+  height: auto;
+  position: relative;
+  cursor: pointer;
+  margin-left: -10px;
+  opacity: .8;
+}

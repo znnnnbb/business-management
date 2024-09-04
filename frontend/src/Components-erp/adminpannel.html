@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- for tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- for graph -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <title>Admin pannel</title>
+</head>
+
+<body>
+    <div class="ml-56 p-1">
+        <div class="flex ">
+            <div style="background-color:#8D9EFF;" class="m-1 p-1 pl-3 bg-gray-300 w-1/4 shadow-2xl">
+                <span style="width:120px; float: right; color: #5DA7DB;" class="mt-4 mr-3"><img src="/bubbles.png"
+                        alt=""></span>
+                <span class="text-gray-600 text-xl">users</span>
+                <br>
+                <br>
+                <span class="text-3xl">720</span>
+                <br><br>
+                <a href=""><span
+                        class="underline decoration-dotted font-extralight underline-offset-2 cursor-pointer hover:text-gray-600">see
+                        all
+                        user</span></a>
+            </div>
+            <div style="background-color:#81C6E8;" class="p-1 m-1 pl-3 bg-gray-300 w-1/4 shadow-2xl">
+                <span style="width:120px; float: right; color: #5DA7DB;" class="mt-4 mr-3"><img src="/bubbles.png"
+                        alt=""></span>
+                <span class="text-gray-600 text-xl">Orders</span>
+                <br>
+                <br>
+                <span class="text-3xl">720</span>
+                <br><br>
+                <a href=""><span
+                        class="underline decoration-dotted font-extralight underline-offset-2 cursor-pointer hover:text-gray-600">see
+                        all
+                        orders</span></a>
+            </div>
+            <div style="background-color:#5DA7DB;" class="p-1 m-1 pl-3 bg-gray-400 w-1/4 shadow-2xl">
+                <span style="width:120px; float: right; color: #5DA7DB;" class="mt-4 mr-3"><img
+                        src="/25268-8-bubbles-photo-thumb.png" alt=""></span>
+                <span class="text-gray-600 text-xl">Earning</span>
+                <br>
+                <br>
+                <span class="text-3xl">$72</span>
+                <br><br>
+                <a href=""><span
+                        class="underline decoration-dotted font-extralight underline-offset-2 cursor-pointer hover:text-gray-600">view
+                        net
+                        earning</span></a>
+            </div>
+            <div style="background-color:#7DE5ED;" class="m-1 p-2 pl-3 bg-gray-400 w-1/4 shadow-2xl  ">
+                <span style="width:120px; float: right; color: #5DA7DB;" class="mt-4 mr-3"><img
+                        src="/25268-8-bubbles-photo-thumb.png" alt=""></span>
+                <span class="text-gray-600 text-xl">My Blance</span>
+                <br>
+                <br>
+                <span class="text-3xl">$122</span>
+                <br><br>
+                <a href=""><span
+                        class="underline decoration-dotted font-extralight underline-offset-2 cursor-pointer hover:text-gray-600">See
+                        Details</span></a>
+            </div>
+        </div>
+        <div class="w-full flex">
+            <div class="w-1/3 mt-8 bg-white-300 border shadow-2xl ">
+                <h1 class="text-3xl text-gray-500 ml-28">Total
+                    revenue</h1>
+                <hr class=" mt-2 ">
+                <img style="width:174px;" src="/circle.png" alt="" class="mt-2 m-auto ">
+                <p class="text-center"> <span class="text-3xl">Total Sale Made Today</span>
+                    <br>
+                    <br>
+                    <span class="text-3xl">$710</span>
+                </p>
+                <p class="text-center pb-2 mt-2">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, pariatur, ex commodi voluptatum
+                </p>
+            </div>
+            <div class="w-2/3 mt-10 ml-8">
+                <canvas id="myChart" style="width:100%;max-width:800px"></canvas>
+
+                <script>
+                    var xValues = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+
+                    new Chart("myChart", {
+                        type: "line",
+                        data: {
+                            labels: xValues,
+                            datasets: [{
+                                data: [860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478],
+                                borderColor: "red",
+                                fill: false
+                            }, {
+                                data: [1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000, 7000],
+                                borderColor: "green",
+                                fill: false
+                            }, {
+                                data: [300, 700, 2000, 5000, 6000, 4000, 2000, 1000, 200, 100],
+                                borderColor: "blue",
+                                fill: false
+                            }]
+                        },
+                        options: {
+                            legend: { display: false }
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

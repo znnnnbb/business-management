@@ -1,0 +1,11 @@
+{
+  "projectName": "auddit",
+  "meta": {
+    "type": "backend"
+  },
+  "backend": {
+    "platform": "node17"
+  },
+  "hash": "32a2c56e",
+  "domain": "Auddit.mdbgo.io"
+}
